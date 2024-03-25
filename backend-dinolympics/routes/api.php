@@ -17,7 +17,6 @@ Route::delete('/missions/champion', [MissionController::class, 'deleteChampion']
 Route::delete('/missions/Athlete', [MissionController::class, 'deleteAthlete']);
 Route::put('/points/{id}', [PointController::class, 'update']);
 Route::get('max-points', 'App\Http\Controllers\PointController@maxPoints');
-Route::get('/skins', [SkinController::class, 'store']);
 Route::post('/points', [PointController::class, 'store']);
 Route::post('/skins', [SkinController::class, 'store']);
 Route::apiResource('skins', SkinController::class);

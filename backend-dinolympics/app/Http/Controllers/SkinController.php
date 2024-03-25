@@ -14,26 +14,20 @@ class SkinController extends Controller
         $skins = Skin::all();
         return SkinResource::collection($skins);
     }
+
     public function store(Request $request)
     {
-        $request->validate([
-            'available' => 'required|boolean',
-            'img' => 'required|string',
+        $validatedData = $request->validate([
             'name' => 'required|string',
             'price' => 'required|numeric',
+            'available' => 'required|boolean',
+            'description' => 'required|string',
+            'img' => 'required|string',
             'quantity' => 'required|numeric'
         ]);
-    
-        $skin = new Skin([
-            'name' => $request->input('name'),
-            'price' => $request->input('price'),
-            'available' => $request->input('available'),
-            'img' => $request->input('img'),
-            'quantity' => $request->input('quantity')
-        ]);
-    
-        $skin->save();
-    
+
+        $skin = Skin::create($validatedData);
+        
         return new SkinResource($skin);
     }
     

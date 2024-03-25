@@ -16,7 +16,6 @@ class SkinResource extends JsonResource
             'description'=> $this->description,
             'available'=> $this->available,
             'quantity'=> $this->quantity,
-
         ];
     }
 }
