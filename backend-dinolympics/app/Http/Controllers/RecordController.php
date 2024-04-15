@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\RecordResource;
+use App\Models\Mission;
 use App\Models\Record;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,7 @@ class RecordController extends Controller
 {
     public function index()
     {
+        $record = Record::find(2);
         $records = Record::all();
         return RecordResource::collection($records);
     }

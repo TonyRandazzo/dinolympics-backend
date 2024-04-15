@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
                 'available' => true
             ],
         ]);
-       Mission::create([
+       Mission::insert([
             'name' => 'Shopper',
             'description' => 'Buy a skin',
         ]);
